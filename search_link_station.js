@@ -7,23 +7,21 @@ var link_stations_locations = [];
 var max_power               = 0;
 var selected_station        = [];
 
-function calculate_by_user_input() {
+function calculateByUserInput() {
     //taking input from users
-    var device_location_x   = prompt("Enter device location's x coordinate");
-    var device_location_y   = prompt("Enter device location's y coordinate");
+    var device_location_x   = document.getElementById('device_location_x').value;
+    var device_location_y   = document.getElementById('device_location_y').value;
     var device_location     = [device_location_x, device_location_y];
-    var num_of_link_station = prompt('Please enter number of power stations');
+    var num_of_link_station = document.getElementById('');
 
     //taking input for multiple link stations' coordinates
-    for (let i = 1; i <= num_of_link_station; i++) {
-        let link_station_x        = prompt(`Enter Power station ${i}'s x coordinate`);
-        let link_station_y        = prompt(`Enter Power station ${i}'s y coordinate`);
-        let link_station_r        = prompt(`Enter Power station ${i}'s reach`);
-        let link_station_location = [link_station_x, link_station_y, link_station_r];
-
+    var link_stations_x = document.getElementsByClassName('link_station_location_x');
+    var link_stations_y = document.getElementsByClassName('link_station_location_y');
+    var link_stations_r = document.getElementsByClassName('link_station_reach');
+    for (let i = 0; i < link_stations_x.length; i++) {
+        let link_station_location = [link_stations_x[i].value, link_stations_y[i].value, link_stations_r[i].value];
         link_stations_locations[i]= link_station_location;
     }
-
     result(link_stations_locations, device_location);
 }
 
@@ -78,11 +76,12 @@ function result(link_stations_locations, device_location) {
     }
     //Checking if any link station was found or not
     if (selected_station.length != 0) {
-        document.getElementById('result').innerHTML=(`Best link station for point ${device_location[0]},${device_location[1]} is ${selected_station[0]},${selected_station[1]} with power ${max_power}`);
+        document.getElementById('result').innerHTML+=(`Best link station for point ${device_location[0]},${device_location[1]} is ${selected_station[0]},${selected_station[1]} with power ${max_power}`);
 
     } else {
-        document.getElementById('result').innerHTML=(`No link station within reach for point ${device_location[0]},${device_location[1]}`);
+        document.getElementById('result').innerHTML+=(`No link station within reach for point ${device_location[0]},${device_location[1]}`);
     }
+    document.getElementById('result').style.border  = "thick solid rgb(226 226 226)";
 }
 
 
@@ -91,7 +90,7 @@ function result(link_stations_locations, device_location) {
  * 
  * @return {null} Prints the result in the document body
  */
-function test_code() {
+function testCode() {
 
     let device_locations    = [
         [20, 0],

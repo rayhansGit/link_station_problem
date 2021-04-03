@@ -1,17 +1,74 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Link Station find</title>
-	<script type="text/javascript" src="search_link_station.js"></script>
-</head>
-<body onload="myfunction()">
-	<span id="result"></span>
-</body>
+   <head>
+      <title>Finding best link-station</title>
+      <script type="text/javascript" src="search_link_station.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   </head>
+   <body>
+      <center>
+         <h2>Finding Best link station From a device</h2>
+      </center>
+      <br>
+      <center>
+         <h4 id="result" class="text-success"></h4>
+      </center>
+      <div class="container h-100">
+         <button class="btn btn-primary" onclick="addLinkStation()">Add more link station+</button>
+         <button class="btn btn-success" onclick="myfunction()">Find best link station</button>
+         <div class="row h-100 justify-content-center align-items-center">
+            <form class="col-12" id="main_form">
+               <div class="row">
+                  <div class="col-6">
+                     <label>Device's X co-ordinate</label>
+                     <input type="number" class="form-control" id="device_location_x">
+                  </div>
+                  <div class="col-6">
+                     <label>Device's Y co-ordinate</label>
+                     <input type="number" class="form-control" id="device_location_y">
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-4">
+                     <label>Link station's X co-ordinate</label>
+                     <input type="number" class="form-control link_station_location_x">
+                  </div>
+                  <div class="col-4">
+                     <label>Link station's Y co-ordinate</label>
+                     <input type="number" class="form-control link_station_location_y">
+                  </div>
+                  <div class="col-4">
+                     <label>Link station's reach</label>
+                     <input type="number" class="form-control link_station_reach">
+                  </div>
+               </div>
+            </form>
+         </div>
+      </div>
+   </body>
 </html>
-
 <script type="text/javascript">
-	function myfunction(){
-		//test_code();
-		calculate_by_user_input();
-	}
+   var link_station_div = `<div class="row">
+          <div class="col-4">
+              <label>Link station's X co-ordinate</label>
+        <input type="number" class="form-control link_station_location_x">
+          </div>
+          <div class="col-4">
+              <label>Link station's Y co-ordinate</label>
+        <input type="number" class="form-control link_station_location_y">
+          </div>
+          <div class="col-4">
+              <label>Link station's reach</label>
+        <input type="number" class="form-control link_station_reach">
+          </div>
+      </div>`;
+   
+   function myfunction(){
+   	//testCode();
+   	calculateByUserInput();
+   }
+   
+   function addLinkStation(){
+   	document.getElementById('main_form').innerHTML +=  link_station_div;
+   }
 </script>
