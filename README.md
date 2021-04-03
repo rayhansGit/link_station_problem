@@ -1,9 +1,9 @@
 /**
  * @author Md Rayhan Al Islam
- * Hours spent: 3hours
+ * Hours spent: 3.5hours
  */
+In a 2D pane there are some link stations of which the x,y coordinates and the reach will be given as input. On the same pane there will be a device, of which the x and y co-ordinate will also be as user input. Depending on the input we have to calculate the best link station depending on power.
 
-The task was finding the most suitable (with most power) link station for a device
 
 *Basic note:
 all the link_station_location arrays structured like this [x_coordinate, y_coordinate, reach]
@@ -11,7 +11,7 @@ device location array is structure as [x_coordinate, y_coordinate]
 
 The link_station.html file includes the search_link_station.js file. There are 5 functions in total in the JS file.
 
-1. 'calculate_by_user_input' function is created for taking the coordinates as user input from the browser prompt, after the prompt the values are added in an array and sent to the 'result' method. 
+1. 'calculate_by_user_input' function is created for taking the coordinates as user input from the designed user interface, after the prompt the values are added in an array and sent to the 'result' method. 
 2. The result method takes 2 parameters as input. i) link_stations_locations and ii) device_location. 
 
 link_stations_locations array list looks like this = [[0,0,2],[1,3,5],[10,20,50]..]
