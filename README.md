@@ -4,7 +4,7 @@
  */
 
 
-In a 2D pane there are some link stations of which the x,y coordinates and the reach will be given as input. On the same pane there will be a device, of which the x and y co-ordinate will also be as user input. Depending on the input we have to calculate the best link station depending on power.
+In a 2D pane there are some link stations of which the x,y coordinates and the reach will be given as input. On the same pane there will be a device, of which the x and y co-ordinate will also be as user input. Depending on the input we have to calculate the best link station which has maximum power.
 
 
 *Basic note:
