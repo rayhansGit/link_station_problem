@@ -74,10 +74,10 @@ function result(link_stations_locations, device_location) {
     }
     //Checking if any link station was found or not
     if (selected_station.length != 0) {
-        document.write(`Best link station for point ${device_location[0]},${device_location[1]} is ${selected_station[0]},${selected_station[1]} with power ${max_power}`);
+        document.getElementById('result').innerHTML=(`Best link station for point ${device_location[0]},${device_location[1]} is ${selected_station[0]},${selected_station[1]} with power ${max_power}`);
 
     } else {
-        document.write(`No link station within reach for point ${device_location[0]},${device_location[1]}`);
+        document.getElementById('result').innerHTML=(`No link station within reach for point ${device_location[0]},${device_location[1]}`);
     }
 }
 
@@ -108,4 +108,4 @@ function test_code() {
 }
 
 //test_code();
-calculate_by_user_input();
+//calculate_by_user_input();
