@@ -1,3 +1,7 @@
+/****
+ * @author Md Rayhan Al Islam 
+ */
+
 //initiating link stations' locations, maximum power variable and selected link station which will carry the max power and reach
 var link_stations_locations = [];
 var max_power               = 0;
